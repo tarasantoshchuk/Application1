@@ -1,6 +1,7 @@
 package com.example.tarasantoshchuk.application1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,11 @@ public class MainActivity extends Activity {
     private Button btnReverse;
 
     /**
+     * variable for btnGoTo2 button from activity_main layout
+     */
+    private Button btnGoTo2;
+
+    /**
      * key to save editText's text in bundle
      */
     private static final String EDIT_TEXT = "edit_text";
@@ -33,6 +39,17 @@ public class MainActivity extends Activity {
         super.onCreate(savedState);
         setContentView(R.layout.activity_main);
         editText = (EditText) findViewById(R.id.editText);
+        btnGoTo2 = (Button) findViewById(R.id.btnGoTo2);
+        btnGoTo2.setOnClickListener(new View.OnClickListener() {
+            /**
+             * starts next task's main activity
+             */
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                startActivity(intent);
+            }
+        });
         btnReverse = (Button) findViewById(R.id.btnReverse);
         btnReverse.setOnClickListener(new View.OnClickListener() {
             /**
@@ -45,7 +62,7 @@ public class MainActivity extends Activity {
                 String newText = new StringBuilder(editText.getText().toString())
                         .reverse()
                         .toString();
-                if(!oldText.equals(newText)) {
+                if (!oldText.equals(newText)) {
                     editText.setText(newText);
                     Toast.makeText(MainActivity.this, R.string.msg_reversed, Toast.LENGTH_SHORT)
                             .show();
