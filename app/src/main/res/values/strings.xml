@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Application1</string>
+    <string name="txt_reverse">Reverse</string>
+    <string name="edit_hint">type some text</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="msg_reversed">String reversed</string>
+    <string name="msg_no_effect">Reverse had no effect</string>
 </resources>
+

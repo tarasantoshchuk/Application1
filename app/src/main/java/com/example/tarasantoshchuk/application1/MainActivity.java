@@ -1,38 +1,71 @@
 package com.example.tarasantoshchuk.application1;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+public class MainActivity extends Activity {
+    /**
+     * variable for editText view from activity_main layout
+     */
+    private EditText editText;
 
-public class MainActivity extends ActionBarActivity {
+    /**
+     * variable for btnReverse button from activity_main layout
+     */
+    private Button btnReverse;
 
+    /**
+     * key to save editText's text in bundle
+     */
+    private static final String EDIT_TEXT = "edit_text";
+
+    /**
+     * sets content view
+     * initializes editText
+     * sets editText's text from bundle
+     */
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedState) {
+        super.onCreate(savedState);
         setContentView(R.layout.activity_main);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        editText = (EditText) findViewById(R.id.editText);
+        btnReverse = (Button) findViewById(R.id.btnReverse);
+        btnReverse.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Handler for button click
+             * checks if reverse changes text inside editText and updates text
+             */
+            @Override
+            public void onClick(View v) {
+                String oldText = editText.getText().toString();
+                String newText = new StringBuilder(editText.getText().toString())
+                        .reverse()
+                        .toString();
+                if(!oldText.equals(newText)) {
+                    editText.setText(newText);
+                    Toast.makeText(MainActivity.this, R.string.msg_reversed, Toast.LENGTH_SHORT)
+                            .show();
+                } else {
+                    Toast.makeText(MainActivity.this, R.string.msg_no_effect, Toast.LENGTH_SHORT)
+                            .show();
+                }
+            }
+        });
+        if(savedState != null) {
+            editText.setText(savedState.getString(EDIT_TEXT));
         }
+    }
 
-        return super.onOptionsItemSelected(item);
+    /**
+     * Saves text inside editText to bundle
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(EDIT_TEXT, editText.getText().toString());
     }
 }
