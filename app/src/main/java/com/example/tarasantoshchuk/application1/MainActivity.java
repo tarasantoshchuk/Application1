@@ -15,16 +15,6 @@ public class MainActivity extends Activity {
     private EditText editText;
 
     /**
-     * variable for btnReverse button from activity_main layout
-     */
-    private Button btnReverse;
-
-    /**
-     * variable for btnGoTo2 button from activity_main layout
-     */
-    private Button btnGoTo2;
-
-    /**
      * key to save editText's text in bundle
      */
     private static final String EDIT_TEXT = "edit_text";
@@ -38,8 +28,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedState) {
         super.onCreate(savedState);
         setContentView(R.layout.activity_main);
-        editText = (EditText) findViewById(R.id.editText);
-        btnGoTo2 = (Button) findViewById(R.id.btnGoTo2);
+        editText = (EditText) findViewById(R.id.editTextString);
+        /**
+         * variable for btnGoTo2 button from activity_main layout
+         */
+        Button btnGoTo2 = (Button) findViewById(R.id.btnGoTo2);
         btnGoTo2.setOnClickListener(new View.OnClickListener() {
             /**
              * starts next task's main activity
@@ -50,7 +43,10 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
-        btnReverse = (Button) findViewById(R.id.btnReverse);
+        /**
+         * variable for btnReverse button from activity_main layout
+         */
+        Button btnReverse = (Button) findViewById(R.id.btnReverse);
         btnReverse.setOnClickListener(new View.OnClickListener() {
             /**
              * Handler for button click

@@ -8,5 +8,10 @@
     <string name="msg_no_effect">Reverse had no effect</string>
     <string name="txt_to_next_task">Go to next task</string>
     <string name="txt_movable">Movable text</string>
+    <string name="btn_send_string">Send string</string>
+    <string name="txt_init">Custom class init:</string>
+    <string name="btn_send_class">Send class</string>
+    <string name="txt_class_fields">Class fields</string>
+    <string name="txt_string">String</string>
 </resources>
 

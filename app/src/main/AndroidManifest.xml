@@ -18,6 +18,8 @@
         </activity>
 
         <activity android:name=".MainActivity2"/>
+        <activity android:name=".MainActivity3"/>
+        <activity android:name=".RecipientActivity3"/>
     </application>
 
 </manifest>
