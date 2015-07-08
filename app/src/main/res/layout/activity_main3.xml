@@ -51,4 +51,11 @@
         android:text="@string/btn_send_class"
         android:id="@+id/btnClass"
         android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_to_next_task"
+        android:id="@+id/btnGoTo4"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>

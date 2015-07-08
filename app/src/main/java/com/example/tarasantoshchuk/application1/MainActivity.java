@@ -55,9 +55,11 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 String oldText = editText.getText().toString();
+
                 String newText = new StringBuilder(editText.getText().toString())
                         .reverse()
                         .toString();
+
                 if (!oldText.equals(newText)) {
                     editText.setText(newText);
                     Toast.makeText(MainActivity.this, R.string.msg_reversed, Toast.LENGTH_SHORT)

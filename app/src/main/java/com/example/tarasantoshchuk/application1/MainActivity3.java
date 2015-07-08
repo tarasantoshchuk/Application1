@@ -18,12 +18,16 @@ public class MainActivity3 extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+
         mEditTextString = (EditText) findViewById(R.id.editTextString);
         mEditTextString1 = (EditText) findViewById(R.id.editTextString1);
         mEditTextString2 = (EditText) findViewById(R.id.editTextString2);
         mEditTextString3 = (EditText) findViewById(R.id.editTextString3);
+
         Button btnClass = (Button) findViewById(R.id.btnClass);
         Button btnString = (Button) findViewById(R.id.btnString);
+        Button btnGoTo4 = (Button) findViewById(R.id.btnGoTo4);
+
         btnClass.setOnClickListener(new View.OnClickListener() {
             /**
              * puts string from textViewString to intent extras and starts new activity
@@ -31,11 +35,13 @@ public class MainActivity3 extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity3.this, RecipientActivity3.class);
+
                 CustomClass custom = new CustomClass(
                         mEditTextString1.getText().toString(),
                         mEditTextString2.getText().toString(),
                         mEditTextString3.getText().toString()
                 );
+
                 Bundle bundle = RecipientActivity3.getStartExtras(custom);
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -48,9 +54,18 @@ public class MainActivity3 extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity3.this, RecipientActivity3.class);
+
                 Bundle bundle = RecipientActivity3
                         .getStartExtras(mEditTextString.getText().toString());
+
                 intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+        btnGoTo4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
                 startActivity(intent);
             }
         });

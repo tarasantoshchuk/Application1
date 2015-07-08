@@ -13,5 +13,13 @@
     <string name="btn_send_class">Send class</string>
     <string name="txt_class_fields">Class fields</string>
     <string name="txt_string">String</string>
+    <string name="txt_pict_1">Picture 1</string>
+    <string name="txt_pict_2">Picture 2</string>
+    <string name="txt_pict_3">Picture 3</string>
+    <string name="url_pict_1">http://icons.iconarchive.com/icons/igh0zt/ios7-style-metro-ui/512/MetroUI-Folder-OS-OS-Android-icon.png</string>
+    <string name="url_pict_2">http://icons.iconarchive.com/icons/martz90/hex/512/android-icon.png</string>
+    <string name="url_pict_3">http://www.iconpng.com/png/boxed_metal_icons/android.png</string>
+    <string name="txt_url_pict">picture from url</string>
+    <string name="txt_enter_url">enter image url</string>
 </resources>
 

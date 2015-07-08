@@ -58,10 +58,13 @@ public class MainActivity2 extends Activity {
                         .ofFloat(mTxtMovable, "X", mTxtMovable.getX(), event.getX());
                 ValueAnimator animatorY = ObjectAnimator
                         .ofFloat(mTxtMovable, "Y", mTxtMovable.getY(), event.getY());
+
                 animatorX.setDuration(DURATION);
                 animatorY.setDuration(DURATION);
+
                 animatorX.start();
                 animatorY.start();
+
                 return true;
             }
         });
